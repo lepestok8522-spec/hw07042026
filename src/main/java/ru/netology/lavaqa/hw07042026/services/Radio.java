@@ -15,13 +15,13 @@ public class Radio {
     public void setCurrentStation(int newCurrentStation) {
         if (9 >= newCurrentStation & 0 <= newCurrentStation) {
             currentStation = newCurrentStation;
-                }
+        }
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
         if (100 >= newCurrentVolume & 0 <= newCurrentVolume) {
             currentVolume = newCurrentVolume;
-               }
+        }
     }
 
     public void nextStation() {
