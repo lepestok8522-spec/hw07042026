@@ -57,6 +57,7 @@ public class RadioTest {
         radio.setCurrentStation(10);
         Assertions.assertEquals(5, radio.getCurrentStation());
     }
+
     @Test
     public void shouldNotSetInvalidStationWithCustomCount() {
         Radio radio = new Radio(15);
@@ -68,7 +69,8 @@ public class RadioTest {
         radio.setCurrentStation(14);
         Assertions.assertEquals(14, radio.getCurrentStation());
     }
-        @Test
+
+    @Test
     public void shouldGoToNextStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
@@ -77,9 +79,9 @@ public class RadioTest {
         radio.setCurrentStation(9);
         radio.nextStation();
         Assertions.assertEquals(0, radio.getCurrentStation());
-        }
+    }
 
-     @Test
+    @Test
     public void shouldGoToPrevStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(1);
@@ -88,7 +90,7 @@ public class RadioTest {
         radio.setCurrentStation(0);
         radio.prevStation();
         Assertions.assertEquals(9, radio.getCurrentStation());
-     }
+    }
 
     @Test
     public void shouldSetValidVolume() {

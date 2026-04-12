@@ -5,11 +5,11 @@ public class Radio {
     private int currentVolume;
     private int numberOfStations;
 
-    public Radio (){
+    public Radio() {
         this.numberOfStations = 10; // кол-во станций
     }
 
-    public Radio (int numberOfStations) {
+    public Radio(int numberOfStations) {
         if (numberOfStations <= 0) {
             this.numberOfStations = 10;
         } else {
@@ -22,10 +22,11 @@ public class Radio {
     }
 
     public void setCurrentStation(int newStation) {
-        if (newStation < numberOfStations  && newStation >=0) {
+        if (newStation < numberOfStations && newStation >= 0) {
             currentStation = newStation;
         }
     }
+
     public void nextStation() {
         if (currentStation < numberOfStations - 1) {
             currentStation = currentStation + 1;
@@ -38,7 +39,7 @@ public class Radio {
         if (currentStation == 0) {
             currentStation = numberOfStations - 1;
         } else {
-            currentStation --;
+            currentStation--;
         }
     }
 
