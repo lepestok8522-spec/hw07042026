@@ -3,29 +3,32 @@ package ru.netology.lavaqa.hw07042026.services;
 public class Radio {
     private int currentStation;
     private int currentVolume;
+    private int numberOfStations;
+
+    public Radio() {
+        this.numberOfStations = 10; // кол-во станций
+    }
+
+    public Radio(int numberOfStations) {
+        if (numberOfStations <= 0) {
+            this.numberOfStations = 10;
+        } else {
+            this.numberOfStations = numberOfStations;
+        }
+    }
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentStation(int newCurrentStation) {
-        if (9 >= newCurrentStation & 0 <= newCurrentStation) {
-            currentStation = newCurrentStation;
-        }
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (100 >= newCurrentVolume & 0 <= newCurrentVolume) {
-            currentVolume = newCurrentVolume;
+    public void setCurrentStation(int newStation) {
+        if (newStation < numberOfStations && newStation >= 0) {
+            currentStation = newStation;
         }
     }
 
     public void nextStation() {
-        if (currentStation < 9) {
+        if (currentStation < numberOfStations - 1) {
             currentStation = currentStation + 1;
         } else {
             currentStation = 0;
@@ -33,10 +36,20 @@ public class Radio {
     }
 
     public void prevStation() {
-        if (currentStation > 0) {
-            currentStation = currentStation - 1;
+        if (currentStation == 0) {
+            currentStation = numberOfStations - 1;
         } else {
-            currentStation = 9;
+            currentStation--;
+        }
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume <= 100 && newCurrentVolume >= 0) {
+            currentVolume = newCurrentVolume;
         }
     }
 
